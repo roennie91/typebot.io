@@ -46,10 +46,14 @@ services:
   typebot-builder:
     <<: *typebot-common
     image: baptistearno/typebot-builder:latest
+    ports:
+      - "4000:3000"
 
   typebot-viewer:
     <<: *typebot-common
     image: baptistearno/typebot-viewer:latest
+    ports:
+      - "4001:3000"
 
   typebot-minio:
     image: minio/minio
